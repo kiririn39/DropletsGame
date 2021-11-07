@@ -18,4 +18,4 @@ Details of the assignment:
 
 8. Completed tasks are accepted until 10.11.21 inclusive. Absolutely all solutions without compilation errors will receive a review.
 
-9.Unity version - 2020 
+9.Unity version - 2020.
