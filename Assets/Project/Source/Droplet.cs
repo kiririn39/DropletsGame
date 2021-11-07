@@ -4,6 +4,7 @@ using UnityEngine.EventSystems;
 
 namespace Project.Source
 {
+    [RequireComponent(typeof(Collider2D))]
     public class Droplet : MonoBehaviour, IUpdatable, IPointerClickHandler
     {
         [SerializeField] private float movementSpeed = 1.0f;
