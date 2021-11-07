@@ -19,8 +19,8 @@ namespace Project.Source
         {
             _updatables = new List<IUpdatable>();
             _transitBoundsCalculator = new TransitBoundsCalculator(Camera.main);
-            _transitTimer = new Timer(TimeSpan.FromSeconds(0.5f), TransitDroplet);
-            _deltaTimeIncreaseTimer = new Timer(TimeSpan.FromSeconds(1.5f), SpeedUpGame);
+            _transitTimer = new Timer(TimeSpan.FromSeconds(3.5f), TransitDroplet);
+            _deltaTimeIncreaseTimer = new Timer(TimeSpan.FromSeconds(5.5f), SpeedUpGame);
         }
 
         private void TransitDroplet()

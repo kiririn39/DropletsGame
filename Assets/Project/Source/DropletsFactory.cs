@@ -10,6 +10,6 @@ namespace Project.Source
 
         public Droplet GetDroplet() => Instantiate(dropletPrefab);
 
-        public void DisposeInstanceOf(Droplet droplet) => Destroy(droplet);
+        public void DisposeInstanceOf(Droplet droplet) => Destroy(droplet.gameObject);
     }
 }
