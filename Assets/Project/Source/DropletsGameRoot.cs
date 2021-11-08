@@ -19,8 +19,8 @@ namespace Project.Source
         {
             _updatables = new List<IUpdatable>();
             _transitBoundsCalculator = new TransitBoundsCalculator(Camera.main);
-            _transitTimer = new Timer(TimeSpan.FromSeconds(3.5f), TransitDroplet);
-            _deltaTimeIncreaseTimer = new Timer(TimeSpan.FromSeconds(5.5f), SpeedUpGame);
+            _transitTimer = new Timer(TimeSpan.FromSeconds(.5f), TransitDroplet);
+            _deltaTimeIncreaseTimer = new Timer(TimeSpan.FromSeconds(2.5f), SpeedUpGame);
         }
 
         private void TransitDroplet()
@@ -30,11 +30,7 @@ namespace Project.Source
             var endPoint = _transitBoundsCalculator.TransitEndPoint();
 
             _updatables.Add(droplet);
-            droplet.OnLifecycleEnds(instance =>
-            {
-                _updatables.Remove(instance);
-                dropletsFactory.DisposeInstanceOf(instance);
-            });
+            droplet.OnLifecycleEndAction(instance => _updatables.Remove(instance));
 
             droplet.Transit(startPoint, endPoint);
         }

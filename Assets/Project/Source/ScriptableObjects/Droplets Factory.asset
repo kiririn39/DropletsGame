@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2397c93137c548fb97fb551d3ba6188d, type: 3}
   m_Name: Droplets Factory
   m_EditorClassIdentifier: 
-  dropletPrefab: {fileID: 2111463091076166429, guid: 87fae791587696847ac959385d776e4e, type: 3}
+  dropletPrefab: {fileID: 1549747098770068601, guid: 87fae791587696847ac959385d776e4e, type: 3}

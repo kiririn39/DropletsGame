@@ -7,7 +7,7 @@ namespace Project.Source
     [RequireComponent(typeof(Collider2D))]
     public class Droplet : MonoBehaviour, IUpdatable, IPointerClickHandler
     {
-        [SerializeField] private float movementSpeed = 1.0f;
+        [SerializeField] private float movementSpeed;
         private Vector3 _moveFrom;
         private Vector3 _moveTo;
         private float _movementProgress;
@@ -33,20 +33,20 @@ namespace Project.Source
             if (_movementProgress < 1.0f)
                 return;
 
-            gameObject.SetActive(false);
-            _transited?.Invoke();
-            _lifecycleEnded?.Invoke(this);
+            InvokeLifecycleEnd(_transited);
         }
 
         public void OnTransitFinished(Action action) => _transited = action;
 
         public void OnTransitInterrupted(Action action) => _transitInterrupted = action;
 
-        public void OnLifecycleEnds(Action<Droplet> action) => _lifecycleEnded = action;
+        public void OnLifecycleEndAction(Action<Droplet> action) => _lifecycleEnded = action;
 
-        public void OnPointerClick(PointerEventData eventData)
+        public void OnPointerClick(PointerEventData eventData) => InvokeLifecycleEnd(_transitInterrupted);
+
+        protected virtual void InvokeLifecycleEnd(Action preEndAction)
         {
-            _transitInterrupted?.Invoke();
+            preEndAction?.Invoke();
             _lifecycleEnded?.Invoke(this);
         }
     }
