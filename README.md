@@ -15,7 +15,3 @@ Details of the assignment:
 6. When the ball is destroyed, an explosion of particles of the same color as the ball itself must be produced.
 
 7. Add logic to constantly accelerate all balls over time to complicate the process.
-
-8. Completed tasks are accepted until 10.11.21 inclusive. Absolutely all solutions without compilation errors will receive a review.
-
-9. Unity version - 2020.
