@@ -9,7 +9,7 @@ namespace Project.Source
 
         public void SetPool(ObjectsPool<Droplet> pool) => _pool = pool;
 
-        protected override void InvokeLifecycleEnd(Action action)
+        protected override void InvokeLifecycleEnd(Action<Droplet> action)
         {
             base.InvokeLifecycleEnd(action);
             _pool?.PoolInstance(this);
